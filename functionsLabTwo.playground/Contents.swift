@@ -29,15 +29,15 @@ for (input, expectedOutput) in testCasesOne {
 // Write a function named frequencyDictionary(of:) that takes a String as input and returns a dictionary that maps each character its number of occurrances
 
 // Your function here
-
-func frequencyDictionary(of: String) -> [Character:Int] {
-    var frequency = 0
-    var output = [Character : Int]()
-    for char in of {
-    }
-        
-    return output
-}
+//
+//func frequencyDictionary(of: String) -> [Character:Int] {
+//    var frequency = 0
+//    var output = [Character : Int]()
+//    for char in of {
+//    }
+//
+//    return output
+//}
 
 let testCasesTwo: [(String, [Character: Int])] = [
     (input: "hello", expectedOutput: ["h": 1, "e": 1, "l": 2, "o": 1]),
@@ -81,12 +81,9 @@ func fizzBuzz(upto: Int) -> [String]{
             output.append(String(int))
         }
 }
-    print(output)
     return (output)
-    
-}
 
-fizzBuzz(upto: 20)
+}
 
 let testCasesThree = [
     (input: 20, expectedOutput: ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz", "16", "17", "Fizz", "19", "Buzz"]),
@@ -104,8 +101,17 @@ for (input, expectedOutput) in testCasesThree {
 
 // Write a function named value(_:isGreaterThanAverageOf:) that takes in an array of Doubles and a Double and returns whether the Double is greater than the average
 
-func value (input: Double, isGreaterThanAverageOf: [Double]) -> Bool {
-    
+func value(_ inputOne: Double, isGreaterThanAverageOf: [Double]) -> Bool {
+    var output = Bool()
+    var average = 0.0
+    var trueAverage = 0.0
+    for int in isGreaterThanAverageOf {
+        average += int
+     trueAverage = (average / Double(isGreaterThanAverageOf.count))
+        output = inputOne > trueAverage
+    }
+    print(output)
+    return output
 }
 
 let testCasesFour = [
@@ -116,10 +122,10 @@ let testCasesFour = [
     (inputOne: 105.4, inputTwo: [1,42,1,541,42,5], expectedOutput: true),
 ]
 
-//for (inputOne, inputTwo, expectedOutput) in testCasesFour {
-//    let output = value(inputOne, isGreaterThanAverageOf: inputTwo)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo), but got \(output)")
-//}
+for (inputOne, inputTwo, expectedOutput) in testCasesFour {
+    let output = value(inputOne, isGreaterThanAverageOf: inputTwo)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo), but got \(output)")
+}
 
 // Question Five
 
